@@ -1,0 +1,350 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.app-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 3rem 1rem;
+  text-align: center;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.app-header h1 {
+  font-size: 2.8rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  opacity: 0.95;
+  margin-bottom: 0.5rem;
+}
+
+.estudiante {
+  font-size: 0.95rem;
+  opacity: 0.85;
+  font-style: italic;
+}
+
+.ejercicios-container {
+  flex: 1;
+  max-width: 1000px;
+  margin: 2rem auto;
+  width: 100%;
+  padding: 0 1rem;
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 1fr;
+}
+
+.ejercicio {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  animation: fadeIn 0.5s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.ejercicio:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+}
+
+.ejercicio h2 {
+  color: #667eea;
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 3px solid #667eea;
+  padding-bottom: 0.5rem;
+}
+
+.descripcion {
+  color: #666;
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+  font-style: italic;
+}
+
+.contenido {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.input-field {
+  padding: 1rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input-field:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.resultado {
+  background: linear-gradient(135deg, #f5f7fa 0%, #e8f0fe 100%);
+  padding: 1.5rem;
+  border-left: 4px solid #667eea;
+  border-radius: 8px;
+}
+
+.resultado p {
+  margin: 0.5rem 0;
+  font-size: 1.05rem;
+  color: #333;
+}
+
+.resultado strong {
+  color: #667eea;
+}
+
+.array-display {
+  background: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border-left: 4px solid #667eea;
+}
+
+.array-display p {
+  margin: 0.75rem 0;
+  font-size: 1rem;
+  color: #333;
+  word-break: break-word;
+  font-family: 'Courier New', monospace;
+}
+
+.array-display strong {
+  color: #667eea;
+}
+
+/* ========== TABLA ALUMNOS ========== */
+.tabla-alumnos {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.tabla-alumnos table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.tabla-alumnos thead {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.tabla-alumnos th {
+  padding: 1rem;
+  text-align: left;
+  font-weight: 600;
+}
+
+.tabla-alumnos td {
+  padding: 1rem;
+  border-bottom: 1px solid #e0e0e0;
+  color: #333;
+}
+
+.tabla-alumnos tbody tr:hover {
+  background-color: #f5f7fa;
+}
+
+.tabla-alumnos tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.promedio {
+  background: linear-gradient(135deg, #f5f7fa 0%, #e8f0fe 100%);
+  padding: 1.5rem;
+  border-left: 4px solid #667eea;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  color: #333;
+  text-align: center;
+}
+
+.promedio strong {
+  color: #667eea;
+  font-size: 1.3rem;
+}
+
+/* ========== ACUMULADOR ========== */
+.acumulador-display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.valor-acumulador {
+  font-size: 4rem;
+  font-weight: 700;
+  color: #667eea;
+  background: linear-gradient(135deg, #f5f7fa 0%, #e8f0fe 100%);
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 30px rgba(102, 126, 234, 0.2);
+}
+
+.botones {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btn {
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.btn-incrementar {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.btn-incrementar:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+}
+
+.btn-disminuir {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  color: white;
+}
+
+.btn-disminuir:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(245, 87, 108, 0.3);
+}
+
+.btn:active {
+  transform: translateY(-1px);
+}
+
+.app-footer {
+  background: rgba(0, 0, 0, 0.2);
+  color: white;
+  text-align: center;
+  padding: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: auto;
+}
+
+.app-footer p {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+  .app-header h1 {
+    font-size: 2rem;
+  }
+
+  .ejercicio {
+    padding: 1.5rem;
+  }
+
+  .ejercicio h2 {
+    font-size: 1.4rem;
+  }
+
+  .valor-acumulador {
+    width: 120px;
+    height: 120px;
+    font-size: 3rem;
+  }
+
+  .botones {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .tabla-alumnos th,
+  .tabla-alumnos td {
+    padding: 0.75rem;
+    font-size: 0.9rem;
+  }
+
+  .ejercicios-container {
+    margin: 1rem auto;
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .app-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .ejercicio {
+    padding: 1rem;
+  }
+
+  .ejercicio h2 {
+    font-size: 1.2rem;
+  }
+
+  .valor-acumulador {
+    width: 100px;
+    height: 100px;
+    font-size: 2.5rem;
+  }
+}
