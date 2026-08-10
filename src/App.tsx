@@ -24,7 +24,27 @@ function calcularPromedioCalificaciones(alumnos: Alumno[]): number {
   return suma / alumnos.length;
 }
 
-
+function LibroPEA() {
+  return (
+    <section className="libro-pea-section">
+      <h2>Referencia Bibliográfica</h2>
+      <div className="libro-container">
+        <img 
+          src="/referencias/libro-PEA.png" 
+          alt="Libro PEA "
+          className="libro-imagen"
+        />
+        <div className="libro-info">
+          <h3>Introducción a la Movilidad: 4G/LTE y el Desarrollo de Aplicaciones Android</h3>
+          <p><strong>Autores:</strong> Rafael León Sanz · Ramón Galán López</p>
+          <p><strong>Plataforma:</strong> eLibro.net (ITSQMET)</p>
+          <p><strong>Páginas:</strong> 158</p>
+          <p className="requisito">Requisito CUMPLIDO</p>
+        </div>
+      </div>
+    </section>
+  );
+}
 function Ejercicio1() {
   const [lado, setLado] = useState<number>(0);
   const area = areaDelCuadrado(lado);
@@ -155,7 +175,8 @@ function App() {
       <header className="app-header">
         <h1>Ejercicios TypeScript - React</h1>
         <p className="subtitle">Instituto Tecnológico Superior Quito Metropolitano</p>
-        <p className="estudiante">Estudiante: Pablo Menendez F</p>
+        <p className="estudiante">Estudiante: <a href="https://github.com/pmenendez-itsqme" target="_blank" rel="noopener noreferrer">Pablo Menendez F</a>
+</p>
       </header>
 
       <main className="ejercicios-container">
@@ -164,6 +185,7 @@ function App() {
         <Ejercicio3 />
         <Ejercicio4 />
         <Ejercicio5 />
+        <LibroPEA />
       </main>
 
       <footer className="app-footer">
